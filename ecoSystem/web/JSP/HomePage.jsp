@@ -1,7 +1,15 @@
+<%-- 
+    Document   : HomePage
+    Created on : Oct 28, 2022, 9:54:56 PM
+    Author     : Asus
+--%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,8 +19,6 @@
 
         <title>NaOH Shopping Online</title>
 
-
-        <!-- Additional CSS Files -->
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
         <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
@@ -22,12 +28,9 @@
         <link rel="stylesheet" href="assets/css/owl-carousel.css">
 
         <link rel="stylesheet" href="assets/css/lightbox.css">
-
     </head>
-
     <body>
 
-        <!-- ***** Preloader Start ***** -->
         <div id="preloader">
             <div class="jumper">
                 <div></div>
@@ -35,10 +38,7 @@
                 <div></div>
             </div>
         </div>  
-        <!-- ***** Preloader End ***** -->
 
-
-        <!-- ***** Header Area Start ***** -->
         <header class="header-area header-sticky">
             <div class="container">
                 <div class="row">
@@ -67,7 +67,23 @@
                                     </ul>
                                 </li>
 
-                                <li class=""><a href="LoginController">Login</a></li>
+
+                                <c:if test="${sessionScope.acc.isStaff == 1}">
+                                    <li><a href="LoginServlet"> Manager Account</a></li>
+                                    <li><a href="ManagerProServlet"> Manager Product</a></li>
+                                    </c:if>
+                                    <c:if test="${sessionScope.acc.isCustomer == 1}">
+                                    <li><a href="ManagerProServlet"> Cart</a></li>
+                                    </c:if>
+                                    <c:if test="${sessionScope.acc != null}">
+                                    <li > Hello ${sessionScope.acc.username}</li>
+                                    <a  href="LogoutController">Logout</a>
+                                </c:if>
+
+                                <c:if test="${sessionScope.acc == null}">
+                                    <li><a href="LoginController"></i> Login</a></li>
+                                    </c:if>
+
 
                             </ul>        
                             <a class='menu-trigger'>
@@ -539,7 +555,7 @@
                 </div>
             </div>
         </section>
-        
+
 
         <!-- ***** Footer Start ***** -->
         <footer>
@@ -640,6 +656,5 @@
             });
 
         </script>
-
     </body>
 </html>

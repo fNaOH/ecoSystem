@@ -1,9 +1,11 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
   <head>
 
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -98,7 +100,7 @@ https://templatemo.com/tm-571-hexashop
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-content">
-                        <h2>Login</h2>
+                        <h2>Single Product Page</h2>
                         <span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span>
                     </div>
                 </div>
@@ -109,65 +111,43 @@ https://templatemo.com/tm-571-hexashop
 
 
     <!-- ***** Product Area Starts ***** -->
-    <section class="h-100">
-            <div class="container h-100">
-                <div class="row justify-content-md-center h-100">
-                    <div class="card-wrapper">
-                        <div class="brand">
-                            <a href="./index.html"><img src="./img/logo.png" ></a>
+    <section class="section" id="product">
+        <div class="container">
+            <forEach: items="${listP}" var="p">
+            <div class="row">
+                <div class="col-lg-8">
+                <div class="left-images">
+                    <img src="${p.img}" alt="">
+                    
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="right-content">
+                    <h4>${p.product_name}</h4>
+                    <span class="price">${p.list_price}</span>
+                    
+                    <span>${p.descreption}</span>
+                    
+                    <div class="quantity-content">
+                        <div class="left-content">
+                            <h6>No. of Orders</h6>
                         </div>
-                        <div class="card fat">
-                            <div class="card-body">
-                                <h4 class="card-title">Login</h4>
-                                <form name="input" action="LoginServlet" method="POST" class="my-login-validation" novalidate="">
-<!--                                    <div class="text-danger" >
-                                        ${mess}
-                                    </div>-->
-                                    <div class="form-group">
-                                        <label for="username">User Name</label>
-                                        <input id="username" type="username" class="form-control" name="username" value="" required autofocus>
-                                        <div class="invalid-feedback">
-                                            User Name is invalid
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="password">Password
-                                            <a href="forgot_pass.jsp" class="float-right">
-                                                Forgot Password?
-                                            </a>
-                                        </label>
-                                        <input id="password" type="password" class="form-control" name="password" required data-eye>
-                                        <div class="invalid-feedback">
-                                            Password is required
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="custom-checkbox custom-control">
-                                            <input type="checkbox" name="remember" id="remember" class="custom-control-input">
-                                            <label for="remember" class="custom-control-label">Remember Me</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group m-0">
-                                        <button type="submit" class="btn btn-primary btn-block" value="Login">
-                                            Login
-                                        </button>
-                                    </div>
-                                    <div class="mt-4 text-center">
-                                        Don't have an account? <a href="JSP/register.jsp">Create One</a>
-                                    </div>
-                                </form>
+                        <div class="right-content">
+                            <div class="quantity buttons_added">
+                                <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
                             </div>
                         </div>
-                        <div class="footer">
-                            Copyright &copy; 2022 &mdash; NaOH
-                        </div>
+                    </div>
+                    <div class="total">
+                        <h4>Total: $210.00</h4>
+                        <div class="main-border-button"><a href="#">Add To Cart</a></div>
                     </div>
                 </div>
             </div>
-        </section>
+            </div>
+                </forEach:>
+        </div>
+    </section>
     <!-- ***** Product Area Ends ***** -->
     
     <!-- ***** Footer Start ***** -->
@@ -249,7 +229,6 @@ https://templatemo.com/tm-571-hexashop
     <script src="assets/js/lightbox.js"></script> 
     <script src="assets/js/isotope.js"></script> 
     <script src="assets/js/quantity.js"></script>
-    
     
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>

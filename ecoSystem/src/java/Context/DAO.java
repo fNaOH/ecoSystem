@@ -136,7 +136,7 @@ public class DAO {
         }
         return list;
     }
-    
+
     public product getProById(String product_id) {
 
         String query = "select * from products\n"
@@ -160,6 +160,52 @@ public class DAO {
         } catch (Exception e) {
         }
         return null;
+
+    }
+
+    public int getTotalProduct() {
+        String query = "select count(*) from products";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+
+        } catch (Exception e) {
+        }
+
+        return 0;
+    }
+
+    public List<product> pageProduct(int index) {
+        List<product> list = new ArrayList<>();
+        String query = "select * from products\n"
+                + "order by product_id\n"
+                + "offset ? rows fetch next 12 rows only";
+
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, (index - 1) * 12);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(
+                        new product(
+                                rs.getInt(1),
+                                rs.getString(2),
+                                rs.getInt(3),
+                                rs.getDouble(4),
+                                rs.getString(5),
+                                rs.getString(6),
+                                rs.getString(7),
+                                rs.getString(8)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
 
     }
 
