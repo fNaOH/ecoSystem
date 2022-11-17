@@ -11,19 +11,18 @@ import java.util.Date;
  * @author Asus
  */
 public class order {
-    private int order_id, customer_id, staff_id, order_status;
-    private Date order_date, requied_date, shipping_date;
+    private int order_id, customer_id, order_status;
+    private Date order_date, required_date, shipping_date;
 
     public order() {
     }
 
-    public order(int order_id, int customer_id, int staff_id, int order_status, Date order_date, Date requied_date, Date shipping_date) {
+    public order(int order_id, int customer_id, int order_status, Date order_date, Date required_date, Date shipping_date) {
         this.order_id = order_id;
         this.customer_id = customer_id;
-        this.staff_id = staff_id;
         this.order_status = order_status;
         this.order_date = order_date;
-        this.requied_date = requied_date;
+        this.required_date = required_date;
         this.shipping_date = shipping_date;
     }
 
@@ -43,14 +42,6 @@ public class order {
         this.customer_id = customer_id;
     }
 
-    public int getStaff_id() {
-        return staff_id;
-    }
-
-    public void setStaff_id(int staff_id) {
-        this.staff_id = staff_id;
-    }
-
     public int getOrder_status() {
         return order_status;
     }
@@ -67,12 +58,12 @@ public class order {
         this.order_date = order_date;
     }
 
-    public Date getRequied_date() {
-        return requied_date;
+    public Date getRequired_date() {
+        return required_date;
     }
 
-    public void setRequied_date(Date requied_date) {
-        this.requied_date = requied_date;
+    public void setRequired_date(Date requied_date) {
+        this.required_date = requied_date;
     }
 
     public Date getShipping_date() {

@@ -4,12 +4,16 @@
  */
 package Controller;
 
+import Context.DAO;
+import Model.product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -44,7 +48,20 @@ public class HomePageController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.setCharacterEncoding("UTF-8");
+        DAO dao = new DAO();
+        
+        List<product> cars = dao.getLast6("xe ô tô");
+        List<product> motors = dao.getLast6("xe motor");
+        List<product> planes = dao.getLast6("plane");
+        
+        
+        request.setAttribute("cars", cars);
+        request.setAttribute("motors", motors);
+        request.setAttribute("planes", planes);
+        
+        request.getRequestDispatcher("JSP/HomePage.jsp").forward(request, response);
+        
     }
 
     /**

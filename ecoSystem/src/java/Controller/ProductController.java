@@ -47,11 +47,11 @@ public class ProductController extends HttpServlet {
         }
 
         List<product> list = dao.pageProduct(index);
-        List<product> listL = dao.getLast6();
+//        List<product> listL = dao.getLast6();
         List<product> listT = dao.getTop6();
 
         request.setAttribute("listP", list);
-        request.setAttribute("listL", listL);
+//        request.setAttribute("listL", listL);
         request.setAttribute("listT", listT);
         request.setAttribute("endP", endPage);
         request.setAttribute("tag", index);

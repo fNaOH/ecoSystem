@@ -6,6 +6,8 @@ package Controller;
 
 import Context.DAO;
 import Model.account;
+import Model.product;
+import Model.stock;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -13,6 +15,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  *
@@ -69,12 +74,14 @@ public class LoginController extends HttpServlet {
         DAO dao = new DAO();
 
         account a = dao.login(username, password);
+        HashMap<product,Integer> cart = new HashMap<product,Integer>();
         if (a == null) {
 //                request.setAttribute("mess", "Wrong UserName or Password!");
             request.getRequestDispatcher("JSP/Login.jsp").forward(request, response);
         } else {
-            HttpSession sesion = request.getSession();
-            sesion.setAttribute("acc", a);
+            HttpSession session = request.getSession();
+            session.setAttribute("acc", a);
+            session.setAttribute("cart", cart);
             response.sendRedirect("HomePageController");
         }
     }

@@ -96,6 +96,26 @@ public class product {
         this.brand = brand;
     }
 
-    
-    
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 23 * hash + this.product_id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final product other = (product) obj;
+        return this.product_id == other.product_id;
+    }
+        
 }

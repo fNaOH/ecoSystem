@@ -48,35 +48,17 @@
                     <div class="col-12">
                         <nav class="main-nav">
                             <!-- ***** Logo Start ***** -->
-                            <a href="index.html" class="logo">
+                            <a href="HomePageController" class="logo">
                                 <img src="assets/images/logo.png">
                             </a>
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
                             <ul class="nav">
-                                <li class="scroll-to-section"><a href="index.html" class="active">Home</a></li>
-                                <li class="scroll-to-section"><a href="index.html">Men's</a></li>
-                                <li class="scroll-to-section"><a href="index.html">Women's</a></li>
-                                <li class="scroll-to-section"><a href="index.html">Kid's</a></li>
-                                <li class="submenu">
-                                    <a href="javascript:;">Pages</a>
-                                    <ul>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="products.html">Products</a></li>
-                                        <li><a href="single-product.html">Single Product</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
-                                    </ul>
-                                </li>
-                                <li class="submenu">
-                                    <a href="javascript:;">Features</a>
-                                    <ul>
-                                        <li><a href="#">Features Page 1</a></li>
-                                        <li><a href="#">Features Page 2</a></li>
-                                        <li><a href="#">Features Page 3</a></li>
-                                        <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
-                                    </ul>
-                                </li>
-                                <li class="scroll-to-section"><a href="index.html">Explore</a></li>
+                                <li class="scroll-to-section"><a href="HomePageController" class="active">Home</a></li>
+                                <li class="scroll-to-section"><a href="ProByCateController?category_name=xe ô tô">Car</a></li>
+                                <li class="scroll-to-section"><a href="ProByCateController?category_name=plane">plane</a></li>
+                                <li class="scroll-to-section"><a href="ProByCateController?category_name=xe motor">Motor-bike</a></li>
+                                <li><a href="ProductController">Products</a></li>
                             </ul>        
                             <a class='menu-trigger'>
                                 <span>Menu</span>
@@ -96,7 +78,7 @@
                     <div class="col-lg-12">
                         <div class="inner-content">
                             <h2>Login</h2>
-                            <span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span>
+                            
                         </div>
                     </div>
                 </div>
@@ -132,9 +114,7 @@
 
                                     <div class="form-group">
                                         <label for="password">Password
-                                            <a href="forgot_pass.jsp" class="float-right">
-                                                Forgot Password?
-                                            </a>
+                                            
                                         </label>
                                         <input id="password" type="password" class="form-control" name="password" required data-eye>
                                         <div class="invalid-feedback">
@@ -145,7 +125,6 @@
                                     <div class="form-group">
                                         <div class="custom-checkbox custom-control">
                                             <input type="checkbox" name="remember" id="remember" class="custom-control-input">
-                                            <label for="remember" class="custom-control-label">Remember Me</label>
                                         </div>
                                     </div>
 
@@ -155,7 +134,7 @@
                                         </button>
                                     </div>
                                     <div class="mt-4 text-center">
-                                        Don't have an account? <a href="JSP/register.jsp">Create One</a>
+                                        Don't have an account? <a href="RegisterController">Create One</a>
                                     </div>
                                 </form>
                             </div>
@@ -177,24 +156,24 @@
                                 <img src="assets/images/white-logo.png" alt="hexashop ecommerce templatemo">
                             </div>
                             <ul>
-                                <li><a href="#">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a></li>
-                                <li><a href="#">hexashop@company.com</a></li>
-                                <li><a href="#">010-020-0340</a></li>
+                                <li><a href="#">Hoa Lac, Ha Noi, Viet Nam</a></li>
+                                <li><a href="#">hoannkhe153239@fpt.edu.vn</a></li>
+                                <li><a href="#">032 606 2667</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <h4>Shopping &amp; Categories</h4>
                         <ul>
-                            <li><a href="#">Men’s Shopping</a></li>
-                            <li><a href="#">Women’s Shopping</a></li>
-                            <li><a href="#">Kid's Shopping</a></li>
+                            <li><a href="ProByCateController?category_name=xe ô tô">Car’s Shopping</a></li>
+                            <li><a href="ProByCateController?category_name=plane">Plane’s Shopping</a></li>
+                            <li><a href="ProByCateController?category_name=xe motor">Motor-bike's Shopping</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><a href="#">Homepage</a></li>
+                            <li><a href="HomePageController">Homepage</a></li>
                             <li><a href="#">About Us</a></li>
                             <li><a href="#">Help</a></li>
                             <li><a href="#">Contact Us</a></li>
@@ -209,19 +188,7 @@
                             <li><a href="#">Tracking ID</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-12">
-                        <div class="under-footer">
-                            <p>Copyright © 2022 HexaShop Co., Ltd. All Rights Reserved. 
-
-                                <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p>
-                            <ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </footer>
